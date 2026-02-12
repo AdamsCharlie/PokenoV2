@@ -13,7 +13,6 @@ function App() {
   const [deck, setDeck] = useState<Deck>([]);
   const [cardHistory, setCardHistory] = useState<Card[]>([]);
   const [discardCard, setDiscardCard] = useState<string>("");
-  const [hidden, setHidden] = useState<Card>("");
 
   // Initialize game on component mount
   useEffect(() => {
@@ -22,9 +21,8 @@ function App() {
 
   const startGame = () => {
     const newDeck = shuffleDeck(buildDeck());
-    const hiddenCard = newDeck.pop()!;
+    newDeck.pop(); // Remove one card to simulate hidden card
     setDeck(newDeck);
-    setHidden(hiddenCard);
     setCardHistory([]);
     setDiscardCard("");
   };
