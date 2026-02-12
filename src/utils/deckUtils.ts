@@ -44,7 +44,7 @@ export function shuffleDeck(deck: Deck): Deck {
 }
 
 export function getCardImagePath(card: Card): string {
-  return `/images/cards_suit_first/${card}.png`;
+  return `./images/cards_suit_first/${card}.png`;
 }
 
 export function groupCardsBySuit(cards: Card[]): Record<string, Card[]> {

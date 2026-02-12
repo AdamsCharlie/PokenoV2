@@ -77,7 +77,7 @@ function App() {
             <div id="deck" className="deck">
               <img
                 id="hidden"
-                src="/images/cards_suit_first/BACK.png"
+                src="./images/cards_suit_first/BACK.png"
                 alt="Card back"
               />
             </div>
