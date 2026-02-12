@@ -73,11 +73,13 @@ function App() {
           </div>
           <div id="all-cards" className="all-cards">
             <div id="deck" className="deck">
-              <img
-                id="hidden"
-                src="./images/cards_suit_first/BACK.png"
-                alt="Card back"
-              />
+              {deck.length > 0 && (
+                <img
+                  id="hidden"
+                  src="./images/cards_suit_first/BACK.png"
+                  alt="Card back"
+                />
+              )}
             </div>
             <div id="discard" className="deck">
               {discardCard && (

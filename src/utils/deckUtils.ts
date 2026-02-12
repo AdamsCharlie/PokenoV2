@@ -26,7 +26,6 @@ export function buildDeck(): Deck {
     }
   }
 
-  console.log("Built deck with", deck.length, "cards");
   return deck;
 }
 
