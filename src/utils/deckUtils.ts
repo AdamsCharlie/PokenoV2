@@ -1,4 +1,3 @@
-// Utility functions for deck operations
 export type Card = string;
 export type Deck = Card[];
 
@@ -27,11 +26,12 @@ export function buildDeck(): Deck {
     }
   }
 
+  console.log("Built deck with", deck.length, "cards");
   return deck;
 }
 
 export function shuffleDeck(deck: Deck): Deck {
-  const shuffledDeck = [...deck]; // Create a copy to avoid mutation
+  const shuffledDeck = [...deck];
 
   for (let i = 0; i < shuffledDeck.length; i++) {
     const j = Math.floor(Math.random() * shuffledDeck.length);
@@ -51,12 +51,10 @@ export function groupCardsBySuit(cards: Card[]): Record<string, Card[]> {
   const suits = ["♠", "♣", "♥", "♦"];
   const grouped: Record<string, Card[]> = {};
 
-  // Initialize empty arrays for each suit
   suits.forEach((suit) => {
     grouped[suit] = [];
   });
 
-  // Group cards by their suit (first character)
   cards.forEach((card) => {
     const suit = card.charAt(0);
     if (grouped[suit]) {
@@ -64,7 +62,6 @@ export function groupCardsBySuit(cards: Card[]): Record<string, Card[]> {
     }
   });
 
-  // Sort cards within each suit by value
   const valueOrder = [
     "A",
     "2",

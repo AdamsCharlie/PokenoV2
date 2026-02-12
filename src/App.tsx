@@ -14,14 +14,12 @@ function App() {
   const [cardHistory, setCardHistory] = useState<Card[]>([]);
   const [discardCard, setDiscardCard] = useState<string>("");
 
-  // Initialize game on component mount
   useEffect(() => {
     startGame();
   }, []);
 
   const startGame = () => {
     const newDeck = shuffleDeck(buildDeck());
-    newDeck.pop(); // Remove one card to simulate hidden card
     setDeck(newDeck);
     setCardHistory([]);
     setDiscardCard("");
